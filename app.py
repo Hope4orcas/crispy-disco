@@ -13,7 +13,22 @@ fichero = st.file_uploader("Elige tu imagen", type=['png','jpg'])
 if fichero:
   imagen_original = Image.open(fichero)
   imagen_editada = imagen_original
+  
+  if "Detail" in filters_selected:
+    imagen_editada = imagen_editada.filter(ImageFilter.DETAIL)
+    
+  
+  if "Blur" in filters_selected:
+    imagen_editada = imagen_editada.filter(ImageFilter.BLUR)
 
+  
+  if "Contour" in filters_selected:
+    imagen_editada = imagen_editada.filter(ImageFilter.CONTOUR)
+  
+  
+  if "Sharpen" in filters_selected:
+    imagen_editada = imagen_editada.filter(ImageFilter.SHARPEN)
+  
   col1,col2 = st.columns(2)
 
   with col1:
