@@ -3,7 +3,7 @@ from PIL import Image, ImageFilter
 
 st.title("Image Editor")
 
-filters = ["Contour","Detail","Blur","Sharpen"]
+filters = ["Contour","Detail","Blur","Sharpen","Emboss"]
 
 with st.sidebar:
   filters_selected = st.multiselect("Elige",filters)
@@ -29,6 +29,9 @@ if fichero:
   if "Sharpen" in filters_selected:
     imagen_editada = imagen_editada.filter(ImageFilter.SHARPEN)
   
+  
+  if "Emboss" in filters_selected:
+    imagen_editada = imagen_editada.filter(ImageFilter.EMBOSS)
   col1,col2 = st.columns(2)
 
   with col1:
