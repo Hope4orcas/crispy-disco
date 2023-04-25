@@ -10,7 +10,7 @@ with st.sidebar:
   
 fichero = st.file_uploader("Elige tu imagen", type=['png','jpg'])
 
-if fichero
+if fichero:
   imagen_original = Image.open(fichero)
   imagen_editada = imagen_original
 
