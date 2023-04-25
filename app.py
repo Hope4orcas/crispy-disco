@@ -9,15 +9,17 @@ with st.sidebar:
   filters_selected = st.multiselect("Elige",filters)
   
 fichero = st.file_uploader("Elige tu imagen", type=['png','jpg'])
-imagen_original = Image.open(fichero)
-imagen_editada = imagen_original
 
-col1,col2 = st.columns(2)
+if fichero
+  imagen_original = Image.open(fichero)
+  imagen_editada = imagen_original
 
-with col1:
-  st.header("Original")
-  st.image(imagen_original)
-  
-with col2:
-  st.header("Edited")
-  st.image(imagen_editada)
+  col1,col2 = st.columns(2)
+
+  with col1:
+    st.header("Original")
+    st.image(imagen_original)
+
+  with col2:
+    st.header("Edited")
+    st.image(imagen_editada)
